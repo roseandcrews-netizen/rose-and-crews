@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login — ROSE & CREWS</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+   <a href="index.html" class="logo">
+
+    <img
+        src="assets/logo.png"
+        alt="ROSE & CREWS"
+    >
+
+</a>
+
+    <nav class="nav-links">
+
+        <a href="index.html">HOME</a>
+
+        <a href="news.html">NEWS</a>
+
+        <a href="events.html">EVENTS</a>
+
+        <a href="gallery.html">GALLERY</a>
+
+        <a href="video.html">VIDEO</a>
+
+        <a href="members.html">MEMBERS</a>
+
+        <a href="join.html">JOIN</a>
+
+        <a
+            href="https://discord.gg/urYPbtnhTY"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            DISCORD
+
+        </a>
+
+    </nav>
+
+
+    <a href="login.html"
+       class="login-btn active">
+
+        LOGIN
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<!-- ================= BACKGROUND ================= -->
+
+<div class="hero-background"></div>
+
+
+
+<!-- ================= LOGIN ================= -->
+
+<main class="site-content login-page">
+
+    <section class="rc-login-shell">
+
+        <div class="rc-login-intro">
+            <p class="rc-login-kicker">ROSE & CREWS</p>
+
+            <h1>
+                WELCOME<br>
+                <span>BACK.</span>
+            </h1>
+
+            <p class="rc-login-copy">
+                Sign in to access your member dashboard,
+                profile and ROSE & CREWS community.
+            </p>
+
+            <div class="rc-login-signature">
+                Together on every journey.
+            </div>
+        </div>
+
+        <div class="login-card rc-login-card">
+
+            <div class="rc-login-card-top">
+                <div class="rc-login-mark">
+                    <img src="assets/logo.png" alt="ROSE & CREWS">
+                </div>
+
+                <div>
+                    <p class="rc-login-label">MEMBER PORTAL</p>
+                    <h2>Sign in</h2>
+                    <p>Enter your account details to continue.</p>
+                </div>
+            </div>
+
+            <form id="loginForm">
+
+                <div class="form-group rc-login-field">
+                    <label for="loginUsername">EMAIL / USERNAME</label>
+                    <div class="rc-input-wrap">
+                        <span class="rc-input-icon" aria-hidden="true">✉</span>
+                        <input
+                            type="text"
+                            id="loginUsername"
+                            name="username"
+                            placeholder="Enter your email"
+                            autocomplete="username"
+                            required>
+                    </div>
+                </div>
+
+                <div class="form-group rc-login-field">
+                    <label for="loginPassword">PASSWORD</label>
+                    <div class="rc-input-wrap">
+                        <span class="rc-input-icon" aria-hidden="true">⌁</span>
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="rc-password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                            aria-pressed="false">
+                            SHOW
+                        </button>
+                    </div>
+                </div>
+
+                <button
+                    type="submit"
+                    id="loginSubmit"
+                    class="btn primary rc-login-submit">
+                    <span>LOGIN</span>
+                    <span class="rc-login-arrow">→</span>
+                </button>
+
+            </form>
+
+            <div id="loginResult" class="login-result"></div>
+
+            <div class="rc-login-divider">
+                <span>NEW TO ROSE & CREWS?</span>
+            </div>
+
+            <a href="join.html" class="rc-join-link">
+                APPLY TO JOIN
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+    <img
+        src="assets/logo.png"
+        alt="ROSE & CREWS"
+    >
+
+</div>
+
+    <p>
+        THE MEDIA PROFESSIONALS
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">HOME</a>
+
+        <a href="news.html">NEWS</a>
+
+        <a href="events.html">EVENTS</a>
+
+        <a href="gallery.html">GALLERY</a>
+
+        <a href="video.html">VIDEO</a>
+
+        <a href="members.html">MEMBERS</a>
+
+        <a href="join.html">JOIN</a>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 ROSE & CREWS.
+        ALL RIGHTS RESERVED.
+
+    </div>
+
+</footer>
+
+
+
+<!-- JavaScript -->
+
+<script src="js/script.js"></script>
+
+<script type="module" src="js/login.js"></script>
+
+
+</body>
+
+</html>

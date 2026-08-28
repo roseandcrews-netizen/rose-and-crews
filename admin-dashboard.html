@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard — ROSE & CREWS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <!-- LOGO -->
+
+    <a href="index.html" class="logo">
+
+        <img
+            src="assets/logo.png"
+            alt="ROSE & CREWS">
+
+    </a>
+
+
+    <!-- NAVIGATION -->
+
+    <nav class="nav-links">
+
+        <a href="index.html">HOME</a>
+
+        <a href="news.html">NEWS</a>
+
+        <a href="events.html">EVENTS</a>
+
+        <a href="gallery.html">GALLERY</a>
+
+        <a href="video.html">VIDEO</a>
+
+        <a href="members.html">MEMBERS</a>
+
+        <a href="join.html">JOIN</a>
+
+        <a
+            href="https://discord.gg/urYPbtnhTY"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            DISCORD
+
+        </a>
+
+    </nav>
+
+
+    <!-- LOGOUT -->
+
+    <button
+        id="logoutBtn"
+        class="login-btn">
+
+        LOGOUT
+
+    </button>
+
+
+    <!-- MOBILE MENU -->
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     BACKGROUND
+     ===================================================== -->
+
+<div class="hero-background"></div>
+
+
+
+<!-- =====================================================
+     ADMIN DASHBOARD
+     ===================================================== -->
+
+<main class="site-content dashboard-page">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <p class="hero-small">
+            ROSE & CREWS
+        </p>
+
+        <h1>
+            ADMIN <span>DASHBOARD</span>
+        </h1>
+
+        <p>
+            Manage the ROSE & CREWS website and members.
+        </p>
+
+    </section>
+
+
+
+    <!-- LOADING -->
+
+    <div
+        id="adminLoading"
+        class="dashboard-loading">
+
+        VERIFYING ADMIN ACCESS...
+
+    </div>
+
+
+
+    <!-- =================================================
+         ADMIN CONTENT
+         ================================================= -->
+
+    <section
+        id="adminContent"
+        class="dashboard-content"
+        style="display:none;">
+
+
+        <!-- =================================================
+             ADMIN PROFILE
+             ================================================= -->
+
+        <div class="dashboard-profile">
+
+            <div class="profile-avatar">
+
+                <img
+                    id="adminAvatar"
+                    src="assets/logo.png"
+                    alt="Admin Avatar">
+
+            </div>
+
+
+            <div class="profile-info">
+
+                <span
+                    class="profile-role"
+                    id="adminRole">
+
+                    FOUNDER
+
+                </span>
+
+
+                <h2 id="adminName">
+                    ADMIN
+                </h2>
+
+
+                <p id="adminCountry">
+                    COUNTRY
+                </p>
+
+
+                <div class="member-status">
+
+                    🔐 ACCESS:
+
+                    <strong id="adminAccess">
+                        ADMIN
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ADMIN INFORMATION
+             ================================================= -->
+
+        <div class="dashboard-grid">
+
+
+            <div class="dashboard-card">
+
+                <span>
+                    MEMBER ID
+                </span>
+
+                <strong id="adminMemberID">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>
+                    ROLE
+                </span>
+
+                <strong id="adminRoleCard">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>
+                    ACCESS LEVEL
+                </span>
+
+                <strong id="adminAccessCard">
+                    ADMIN
+                </strong>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <span>
+                    ACCOUNT STATUS
+                </span>
+
+                <strong>
+                    🟢 ACTIVE
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ADMIN CONTROL PANEL
+             ================================================= -->
+
+        <section class="admin-panel">
+
+
+            <div class="admin-panel-header">
+
+                <span class="section-label">
+                    ADMINISTRATION
+                </span>
+
+                <h2>
+                    WEBSITE CONTROL PANEL
+                </h2>
+
+                <p>
+                    Manage ROSE & CREWS website content
+                    from one place.
+                </p>
+
+            </div>
+
+
+
+            <!-- MANAGEMENT GRID -->
+
+            <div class="dashboard-grid admin-management-grid">
+
+
+                <!-- MEMBERS -->
+
+                <a
+                    href="admin-members.html"
+                    class="dashboard-card admin-action-card">
+
+                    <span>
+                        👥 MEMBERS
+                    </span>
+
+                    <strong>
+                        MANAGE MEMBERS
+                    </strong>
+
+                    <small>
+                        Manage member profiles,
+                        roles and access.
+                    </small>
+
+                </a>
+
+
+
+                <!-- NEWS -->
+
+                <a
+                    href="admin-news.html"
+                    class="dashboard-card admin-action-card">
+
+                    <span>
+                        📰 NEWS
+                    </span>
+
+                    <strong>
+                        MANAGE NEWS
+                    </strong>
+
+                    <small>
+                        Add, edit and manage
+                        website news.
+                    </small>
+
+                </a>
+
+
+
+                <!-- EVENTS -->
+
+                <a
+                    href="admin-events.html"
+                    class="dashboard-card admin-action-card">
+
+                    <span>
+                        📅 EVENTS
+                    </span>
+
+                    <strong>
+                        MANAGE EVENTS
+                    </strong>
+
+                    <small>
+                        Manage upcoming events
+                        and convoy information.
+                    </small>
+
+                </a>
+
+
+
+                <!-- GALLERY -->
+
+                <a
+                    href="admin-gallery.html"
+                    class="dashboard-card admin-action-card">
+
+                    <span>
+                        🖼️ GALLERY
+                    </span>
+
+                    <strong>
+                        MANAGE GALLERY
+                    </strong>
+
+                    <small>
+                        Add and manage gallery
+                        images.
+                    </small>
+
+                </a>
+
+
+
+                <!-- VIDEO -->
+
+                <a
+                    href="admin-video.html"
+                    class="dashboard-card admin-action-card">
+
+                    <span>
+                        🎬 VIDEO
+                    </span>
+
+                    <strong>
+                        MANAGE VIDEOS
+                    </strong>
+
+                    <small>
+                        Manage YouTube videos
+                        and media.
+                    </small>
+
+                </a>
+
+
+
+                <!-- SETTINGS -->
+
+                <a
+                    href="admin-settings.html"
+                    class="dashboard-card admin-action-card">
+
+                    <span>
+                        ⚙️ SETTINGS
+                    </span>
+
+                    <strong>
+                        WEBSITE SETTINGS
+                    </strong>
+
+                    <small>
+                        Manage website settings
+                        and configuration.
+                    </small>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DISCORD
+             ================================================= -->
+
+        <div class="discord-dashboard-card">
+
+            <h2>
+                ROSE & CREWS DISCORD
+            </h2>
+
+            <p>
+                Stay connected with the team,
+                announcements and member updates.
+            </p>
+
+            <a
+                href="https://discord.gg/urYPbtnhTY"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn secondary">
+
+                OPEN DISCORD
+
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <img
+            src="assets/logo.png"
+            alt="ROSE & CREWS">
+
+    </div>
+
+
+    <p>
+        THE MEDIA PROFESSIONALS
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">HOME</a>
+
+        <a href="news.html">NEWS</a>
+
+        <a href="events.html">EVENTS</a>
+
+        <a href="gallery.html">GALLERY</a>
+
+        <a href="video.html">VIDEO</a>
+
+        <a href="members.html">MEMBERS</a>
+
+        <a href="join.html">JOIN</a>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 ROSE & CREWS.
+        ALL RIGHTS RESERVED.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     ADMIN JAVASCRIPT
+     ===================================================== -->
+
+<script
+    type="module"
+    src="js/admin-dashboard.js">
+</script>
+
+
+</body>
+
+</html>

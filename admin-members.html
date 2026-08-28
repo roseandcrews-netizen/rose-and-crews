@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Members — ROSE & CREWS</title>
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <img
+            src="assets/logo.png"
+            alt="ROSE & CREWS">
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">HOME</a>
+
+        <a href="news.html">NEWS</a>
+
+        <a href="events.html">EVENTS</a>
+
+        <a href="gallery.html">GALLERY</a>
+
+        <a href="video.html">VIDEO</a>
+
+        <a href="members.html">MEMBERS</a>
+
+        <a href="join.html">JOIN</a>
+
+        <a
+            href="https://discord.gg/urYPbtnhTY"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            DISCORD
+
+        </a>
+
+    </nav>
+
+
+    <button
+        id="logoutBtn"
+        class="login-btn">
+
+        LOGOUT
+
+    </button>
+
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+
+<!-- =====================================================
+     BACKGROUND
+     ===================================================== -->
+
+<div class="hero-background"></div>
+
+
+
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
+<main class="site-content dashboard-page">
+
+
+    <!-- PAGE HEADER -->
+
+    <section class="page-header">
+
+        <p class="hero-small">
+            ROSE & CREWS
+        </p>
+
+
+        <h1>
+            MANAGE <span>MEMBERS</span>
+        </h1>
+
+
+        <p>
+            Search and manage ROSE & CREWS members.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         ADMIN VERIFICATION
+         ================================================= -->
+
+    <div
+        id="adminMembersLoading"
+        class="dashboard-loading">
+
+        VERIFYING ADMIN ACCESS...
+
+    </div>
+
+
+
+    <!-- =================================================
+         ADMIN CONTENT
+         ================================================= -->
+
+    <section
+        id="adminMembersContent"
+        class="dashboard-content"
+        style="display:none;">
+
+
+        <!-- =================================================
+             SEARCH
+             ================================================= -->
+
+        <div class="admin-panel">
+
+            <div class="admin-panel-header">
+
+                <span class="section-label">
+                    MEMBER MANAGEMENT
+                </span>
+
+
+                <h2>
+                    MEMBER DIRECTORY
+                </h2>
+
+
+                <p>
+                    Search members by username,
+                    display name, member ID or role.
+                </p>
+
+            </div>
+
+
+            <div class="member-search-box">
+
+                <input
+                    type="search"
+                    id="memberSearch"
+                    placeholder="Search members..."
+                    autocomplete="off">
+
+            </div>
+
+
+            <div
+                id="memberCount"
+                class="member-count">
+
+                LOADING MEMBERS...
+
+            </div>
+
+
+            <div
+                id="membersList"
+                class="admin-members-list">
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             EDIT MEMBER
+             ================================================= -->
+
+        <section
+            id="editMemberPanel"
+            class="admin-panel"
+            style="display:none;">
+
+
+            <div class="admin-panel-header">
+
+                <span class="section-label">
+                    MEMBER EDITOR
+                </span>
+
+
+                <h2>
+                    EDIT MEMBER
+                </h2>
+
+
+                <p>
+                    Update the selected member information.
+                </p>
+
+            </div>
+
+
+
+            <form
+                id="editMemberForm"
+                class="member-edit-form">
+
+
+                <!-- MEMBER ID -->
+
+                <div class="form-group">
+
+                    <label for="editMemberID">
+                        MEMBER ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editMemberID"
+                        readonly>
+
+                </div>
+
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="editUsername">
+                        USERNAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editUsername"
+                        required>
+
+                </div>
+
+
+
+                <!-- DISPLAY NAME -->
+
+                <div class="form-group">
+
+                    <label for="editDisplayName">
+                        DISPLAY NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editDisplayName"
+                        required>
+
+                </div>
+
+
+
+                <!-- ROLE -->
+
+                <div class="form-group">
+
+                    <label for="editRole">
+                        ROLE
+                    </label>
+
+                    <select id="editRole">
+
+                        <option value="FOUNDER">
+                            FOUNDER
+                        </option>
+                        <option value="HR MANAGER">
+                            HR MANAGER
+                        </option>
+                        <option value="EVENT MANAGER">
+                            EVENT MANAGER
+                        </option>
+                        <option value="COMMUNITY MANAGER">
+                            COMMUNITY MANAGER
+                        </option>
+                        <option value="PARTNER SHIP MANAGER">
+                            PARTNER SHIP MANAGER
+                        </option>
+                        <option value="MODRATER">
+                            MODRATER
+                        </option>
+                        <option value="MEDIA STAFF">
+                            MEDIA STAFF
+                        </option>
+                        <option value="CC STAF">
+                            CC STAF
+                        </option>
+                        <option value="MEDIA TRAINEE">
+                            MEDIA TRAINEE
+                        </option>
+                        <option value="CC TRAINEE">
+                            CC TRAINEE
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- ACCESS -->
+
+                <div class="form-group">
+
+                    <label for="editAccess">
+                        ACCESS
+                    </label>
+
+                    <select id="editAccess">
+
+                        <option value="MEMBER">
+                            MEMBER
+                        </option>
+
+                        <option value="ADMIN">
+                            ADMIN
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- COUNTRY -->
+
+                <div class="form-group">
+
+                    <label for="editCountry">
+                        COUNTRY
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editCountry">
+
+                </div>
+
+
+
+                <!-- JOIN DATE -->
+
+                <div class="form-group">
+
+                    <label for="editJoinDate">
+                        JOIN DATE
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editJoinDate">
+
+                </div>
+
+
+
+                <!-- TMP ID -->
+
+                <div class="form-group">
+
+                    <label for="editTMP">
+                        TRUCKERSMP ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editTMP">
+
+                </div>
+
+
+
+                <!-- TRUCKERSHUB -->
+
+                <div class="form-group">
+
+                    <label for="editHub">
+                        TRUCKERSHUB ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editHub">
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="form-group">
+
+                    <label for="editStatus">
+                        STATUS
+                    </label>
+
+                    <select id="editStatus">
+
+                        <option value="ACTIVE">
+                            ACTIVE
+                        </option>
+
+                        <option value="INACTIVE">
+                            INACTIVE
+                        </option>
+
+                        <option value="SUSPENDED">
+                            SUSPENDED
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- AVATAR -->
+
+                <div class="form-group">
+
+                    <label for="editAvatarURL">
+                        AVATAR URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="editAvatarURL"
+                        placeholder="https://...">
+
+                </div>
+
+
+
+                <!-- FIREBASE UID -->
+
+                <div class="form-group">
+
+                    <label for="editFirebaseUID">
+                        FIREBASE UID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editFirebaseUID"
+                        readonly>
+
+                </div>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="btn primary">
+
+                        SAVE CHANGES
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cancelEditBtn"
+                        class="btn secondary">
+
+                        CANCEL
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+            <!-- SAVE MESSAGE -->
+
+            <div
+                id="saveMessage"
+                class="dashboard-message"
+                style="display:none;">
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             BACK TO ADMIN
+             ================================================= -->
+
+        <div class="dashboard-actions">
+
+            <a
+                href="admin-dashboard.html"
+                class="btn secondary">
+
+                ← BACK TO ADMIN DASHBOARD
+
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+
+    <div class="footer-logo">
+
+        <img
+            src="assets/logo.png"
+            alt="ROSE & CREWS">
+
+    </div>
+
+
+    <p>
+        THE MEDIA PROFESSIONALS
+    </p>
+
+
+    <div class="footer-links">
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="news.html">
+            NEWS
+        </a>
+
+        <a href="events.html">
+            EVENTS
+        </a>
+
+        <a href="gallery.html">
+            GALLERY
+        </a>
+
+        <a href="video.html">
+            VIDEO
+        </a>
+
+        <a href="members.html">
+            MEMBERS
+        </a>
+
+        <a href="join.html">
+            JOIN
+        </a>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 ROSE & CREWS.
+        ALL RIGHTS RESERVED.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script type="module" src="js/admin-members.js?v=2"></script>
+
+
+</body>
+
+</html>

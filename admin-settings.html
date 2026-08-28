@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Settings | ROSE & CREWS</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ADMIN SETTINGS
+         ===================================================== -->
+
+    <main class="admin-page">
+
+        <!-- HEADER -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <span class="profile-role">
+                    ADMIN PANEL
+                </span>
+
+                <h1>
+                    SETTINGS
+                </h1>
+
+                <p>
+                    Manage ROSE & CREWS website settings.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <button
+                    type="button"
+                    id="logoutBtn"
+                    class="btn secondary"
+                >
+                    LOGOUT
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <div
+            id="adminSettingsLoading"
+            class="dashboard-card"
+        >
+
+            VERIFYING ADMIN ACCESS...
+
+        </div>
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <section
+            id="adminSettingsContent"
+            style="display:none;"
+        >
+
+
+            <!-- WEBSITE SETTINGS -->
+
+            <div class="dashboard-card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="profile-role">
+                            WEBSITE
+                        </span>
+
+                        <h2>
+                            GENERAL SETTINGS
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-form-grid">
+
+
+                    <!-- SITE NAME -->
+
+                    <div class="form-group">
+
+                        <label for="siteName">
+                            Website Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="siteName"
+                            placeholder="ROSE & CREWS"
+                        >
+
+                    </div>
+
+
+                    <!-- SITE DESCRIPTION -->
+
+                    <div class="form-group">
+
+                        <label for="siteDescription">
+                            Website Description
+                        </label>
+
+                        <input
+                            type="text"
+                            id="siteDescription"
+                            placeholder="ROSE & CREWS"
+                        >
+
+                    </div>
+
+
+                    <!-- DISCORD -->
+
+                    <div class="form-group">
+
+                        <label for="discordURL">
+                            Discord Invite URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="discordURL"
+                            placeholder="https://discord.gg/..."
+                        >
+
+                    </div>
+
+
+                    <!-- CONTACT EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="contactEmail">
+                            Contact Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            placeholder="email@example.com"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="admin-settings-actions">
+
+                    <button
+                        type="button"
+                        id="saveSettingsBtn"
+                        class="btn primary"
+                    >
+                        SAVE SETTINGS
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="settingsResult"
+                    style="display:none;"
+                ></div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CURRENT ADMIN
+                 ================================================= -->
+
+            <div class="dashboard-card">
+
+                <span class="profile-role">
+                    ACCOUNT
+                </span>
+
+                <h2>
+                    ADMIN ACCOUNT
+                </h2>
+
+
+                <div class="admin-info-list">
+
+                    <p>
+
+                        <strong>
+                            Name:
+                        </strong>
+
+                        <span id="adminName">
+                            —
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Role:
+                        </strong>
+
+                        <span id="adminRole">
+                            —
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Access:
+                        </strong>
+
+                        <span id="adminAccess">
+                            —
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Member ID:
+                        </strong>
+
+                        <span id="adminMemberID">
+                            —
+                        </span>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        type="module"
+        src="js/admin-setting.js"
+    ></script>
+
+</body>
+
+</html>

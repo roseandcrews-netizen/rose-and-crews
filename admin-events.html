@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ROSE & CREWS — Manage Events</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ADMIN EVENTS PAGE
+         ===================================================== -->
+
+    <main class="dashboard-page">
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <section
+            id="adminEventsLoading"
+            class="dashboard-loading"
+        >
+
+            VERIFYING ADMIN ACCESS...
+
+        </section>
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <section
+            id="adminEventsContent"
+            style="display:none;"
+        >
+
+
+            <!-- =============================================
+                 HEADER
+                 ============================================= -->
+
+            <div class="dashboard-header">
+
+                <div>
+
+                    <span class="profile-role">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        MANAGE EVENTS
+                    </h1>
+
+                    <p>
+                        Create, search and manage
+                        ROSE & CREWS events.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <button
+                        type="button"
+                        id="logoutBtn"
+                        class="btn"
+                    >
+                        LOGOUT
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 SEARCH
+                 ============================================= -->
+
+            <div class="dashboard-card">
+
+                <input
+                    type="text"
+                    id="eventSearch"
+                    class="form-input"
+                    placeholder="Search events..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- =============================================
+                 EVENTS
+                 ============================================= -->
+
+            <div
+                id="eventsTable"
+                class="dashboard-grid"
+            >
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        type="module"
+        src="js/admin-events.js"
+    ></script>
+
+
+</body>
+
+</html>

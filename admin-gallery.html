@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ROSE & CREWS — Admin Gallery</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ADMIN GALLERY
+         ===================================================== -->
+
+    <main class="dashboard-page">
+
+
+        <!-- =================================================
+             HEADER
+             ================================================= -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <span class="profile-role">
+                    ADMIN PANEL
+                </span>
+
+                <h1>
+                    GALLERY MANAGEMENT
+                </h1>
+
+                <p>
+                    Add and manage ROSE & CREWS gallery images.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <button
+                    type="button"
+                    id="refreshGallery"
+                    class="btn primary"
+                >
+                    REFRESH
+                </button>
+
+                <button
+                    type="button"
+                    id="logoutBtn"
+                    class="btn"
+                >
+                    LOGOUT
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <div
+            id="adminGalleryLoading"
+            class="dashboard-loading"
+        >
+            VERIFYING ADMIN ACCESS...
+        </div>
+
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <section
+            id="adminGalleryContent"
+            style="display:none;"
+        >
+
+
+            <!-- =============================================
+                 ADD GALLERY IMAGE
+                 ============================================= -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    ADD GALLERY IMAGE
+                </h2>
+
+                <p>
+                    Add a new image to the ROSE & CREWS gallery.
+                </p>
+
+
+                <form id="galleryForm">
+
+
+                    <div class="form-group">
+
+                        <label for="galleryTitle">
+                            TITLE
+                        </label>
+
+                        <input
+                            type="text"
+                            id="galleryTitle"
+                            name="Title"
+                            placeholder="Gallery title"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="galleryImageURL">
+                            IMAGE URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="galleryImageURL"
+                            name="ImageURL"
+                            placeholder="https://..."
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="galleryDescription">
+                            DESCRIPTION
+                        </label>
+
+                        <textarea
+                            id="galleryDescription"
+                            name="Description"
+                            placeholder="Image description"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="galleryCategory">
+                            CATEGORY
+                        </label>
+
+                        <input
+                            type="text"
+                            id="galleryCategory"
+                            name="Category"
+                            placeholder="Convoy / Event / Team"
+                        >
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="galleryStatus">
+                            STATUS
+                        </label>
+
+                        <select
+                            id="galleryStatus"
+                            name="Status"
+                        >
+
+                            <option value="PUBLISHED">
+                                PUBLISHED
+                            </option>
+
+                            <option value="DRAFT">
+                                DRAFT
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <button
+                        type="submit"
+                        id="gallerySubmit"
+                        class="btn primary"
+                    >
+                        ADD IMAGE
+                    </button>
+
+
+                </form>
+
+
+                <div
+                    id="galleryResult"
+                    style="display:none;"
+                ></div>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 GALLERY LIST
+                 ============================================= -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-section-header">
+
+                    <div>
+
+                        <h2>
+                            GALLERY
+                        </h2>
+
+                        <p>
+                            Manage existing gallery images.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="galleryTable">
+
+                    LOADING GALLERY...
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        type="module"
+        src="js/admin-gallery.js"
+    ></script>
+
+
+</body>
+
+</html>

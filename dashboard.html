@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — ROSE & CREWS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="ROSE & CREWS">
+    </a>
+
+    <nav class="nav-links">
+        <a href="index.html">HOME</a>
+        <a href="news.html">NEWS</a>
+        <a href="events.html">EVENTS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="video.html">VIDEO</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="join.html">JOIN</a>
+        <a href="https://discord.gg/urYPbtnhTY" target="_blank" rel="noopener noreferrer">DISCORD</a>
+    </nav>
+
+    <button id="logoutBtn" class="login-btn">LOGOUT</button>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+</header>
+
+<div class="hero-background"></div>
+
+<main class="site-content dashboard-page">
+
+    <section class="page-header">
+        <p class="hero-small">ROSE & CREWS</p>
+        <h1>MEMBER <span>DASHBOARD</span></h1>
+        <p>Welcome to your ROSE & CREWS member area.</p>
+    </section>
+
+    <div id="dashboardLoading" class="dashboard-loading">
+        CONNECTING TO MEMBER DATABASE...
+    </div>
+
+    <section id="dashboardContent" class="dashboard-content" style="display:none;">
+
+        <!-- YOUR PROFILE -->
+        <div class="dashboard-profile">
+            <div class="profile-avatar">
+                <img id="memberAvatar" src="assets/logo.png" alt="Member Avatar">
+            </div>
+
+            <div class="profile-info">
+                <span class="profile-role" id="memberRole">MEMBER</span>
+                <h2 id="memberName">MEMBER</h2>
+                <p id="memberCountry">COUNTRY</p>
+                <div class="member-status" id="memberStatus">🟢 ACTIVE</div>
+            </div>
+
+            <button id="editOwnProfileBtn" type="button" class="btn primary own-profile-btn">
+                EDIT MY PROFILE
+            </button>
+        </div>
+
+        <!-- YOUR DETAILS -->
+        <div class="dashboard-section-title">
+            <span class="section-label">YOUR ACCOUNT</span>
+            <h2>MY DETAILS</h2>
+            <p>You can edit only your own profile information.</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card"><span>MEMBER ID</span><strong id="memberID">—</strong></div>
+            <div class="dashboard-card"><span>USERNAME</span><strong id="memberUsername">—</strong></div>
+            <div class="dashboard-card"><span>TRUCKERSMP ID</span><strong id="memberTMP">—</strong></div>
+            <div class="dashboard-card"><span>TRUCKERSHUB ID</span><strong id="memberHub">—</strong></div>
+            <div class="dashboard-card"><span>JOIN DATE</span><strong id="memberJoinDate">—</strong></div>
+            <div class="dashboard-card"><span>COUNTRY</span><strong id="memberCountryCard">—</strong></div>
+        </div>
+
+        <!-- ALL MEMBERS -->
+        <section class="admin-panel member-directory-panel">
+            <div class="admin-panel-header">
+                <span class="section-label">ROSE & CREWS COMMUNITY</span>
+                <h2>ALL MEMBERS</h2>
+                <p>View the public member details of everyone in ROSE & CREWS. Other members cannot be edited from this page.</p>
+            </div>
+
+            <div class="member-directory-tools">
+                <input type="search" id="memberSearch" placeholder="Search members by name, username, role, country or ID..." autocomplete="off">
+                <div id="memberCount" class="member-count">LOADING MEMBERS...</div>
+            </div>
+
+            <div id="membersList" class="member-directory-list"></div>
+        </section>
+
+        <!-- OWN PROFILE EDITOR -->
+        <section id="ownProfilePanel" class="admin-panel own-profile-panel" style="display:none;">
+            <div class="admin-panel-header">
+                <span class="section-label">MY PROFILE</span>
+                <h2>EDIT MY PROFILE</h2>
+                <p>Only your personal profile fields can be changed here.</p>
+            </div>
+
+            <form id="ownProfileForm" class="member-edit-form">
+
+                <div class="form-group">
+                    <label>MEMBER ID</label>
+                    <input id="ownMemberID" type="text" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="ownUsername">USERNAME</label>
+                    <input id="ownUsername" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ownDisplayName">DISPLAY NAME</label>
+                    <input id="ownDisplayName" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ownCountry">COUNTRY</label>
+                    <input id="ownCountry" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="ownTMP">TRUCKERSMP ID</label>
+                    <input id="ownTMP" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="ownHub">TRUCKERSHUB ID</label>
+                    <input id="ownHub" type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="ownAvatarURL">AVATAR URL</label>
+                    <input id="ownAvatarURL" type="url" placeholder="https://...">
+                </div>
+
+                <div class="form-group">
+                    <label>ROLE</label>
+                    <input id="ownRole" type="text" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>STATUS</label>
+                    <input id="ownStatus" type="text" readonly>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">SAVE MY PROFILE</button>
+                    <button type="button" id="cancelOwnEditBtn" class="btn secondary">CANCEL</button>
+                </div>
+            </form>
+
+            <div id="ownSaveMessage" class="dashboard-message" style="display:none;"></div>
+        </section>
+
+        <div class="truckershub-card">
+            <div>
+                <span class="section-label">TRUCKERSHUB</span>
+                <h2>YOUR TRUCKERSHUB PROFILE</h2>
+                <p>View your TruckersHub member profile.</p>
+            </div>
+            <a id="truckersHubLink" href="#" target="_blank" rel="noopener noreferrer" class="btn primary">
+                OPEN TRUCKERSHUB
+            </a>
+        </div>
+
+        <div class="discord-dashboard-card">
+            <h2>ROSE & CREWS DISCORD</h2>
+            <p>Stay connected with the team, announcements and member updates.</p>
+            <a href="https://discord.gg/urYPbtnhTY" target="_blank" rel="noopener noreferrer" class="btn secondary">JOIN DISCORD</a>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <div class="footer-logo"><img src="assets/logo.png" alt="ROSE & CREWS"></div>
+    <p>THE MEDIA PROFESSIONALS</p>
+    <div class="footer-links">
+        <a href="index.html">HOME</a>
+        <a href="news.html">NEWS</a>
+        <a href="events.html">EVENTS</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="video.html">VIDEO</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="join.html">JOIN</a>
+    </div>
+    <div class="copyright">© 2026 ROSE & CREWS. ALL RIGHTS RESERVED.</div>
+</footer>
+
+<script type="module" src="js/dashboard.js?v=4"></script>
+</body>
+</html>

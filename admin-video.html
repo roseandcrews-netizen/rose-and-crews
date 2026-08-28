@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Video Management | ROSE & CREWS</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         ADMIN VIDEO PAGE
+         ===================================================== -->
+
+    <main class="admin-page">
+
+        <!-- HEADER -->
+
+        <section class="dashboard-header">
+
+            <div>
+
+                <span class="profile-role">
+                    ADMIN PANEL
+                </span>
+
+                <h1>
+                    VIDEO MANAGEMENT
+                </h1>
+
+                <p>
+                    Add, edit and manage ROSE & CREWS videos.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <button
+                    type="button"
+                    id="logoutBtn"
+                    class="btn"
+                >
+                    LOGOUT
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOADING
+             ================================================= -->
+
+        <section
+            id="adminVideoLoading"
+            class="dashboard-card"
+        >
+
+            VERIFYING ADMIN ACCESS...
+
+        </section>
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <section
+            id="adminVideoContent"
+            style="display:none;"
+        >
+
+
+            <!-- ADD VIDEO -->
+
+            <div class="dashboard-card">
+
+                <h2>
+                    ADD VIDEO
+                </h2>
+
+                <p>
+                    Add a new video to the ROSE & CREWS website.
+                </p>
+
+
+                <form id="videoForm">
+
+
+                    <div class="form-group">
+
+                        <label for="videoTitle">
+                            Video Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="videoTitle"
+                            name="Title"
+                            placeholder="Enter video title"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="videoURL">
+                            Video URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="videoURL"
+                            name="VideoURL"
+                            placeholder="https://www.youtube.com/watch?v=..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="videoThumbnail">
+                            Thumbnail URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="videoThumbnail"
+                            name="ThumbnailURL"
+                            placeholder="https://..."
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="videoDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="videoDescription"
+                            name="Description"
+                            rows="5"
+                            placeholder="Enter video description"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="videoStatus">
+                            Status
+                        </label>
+
+                        <select
+                            id="videoStatus"
+                            name="Status"
+                        >
+
+                            <option value="PUBLISHED">
+                                PUBLISHED
+                            </option>
+
+                            <option value="DRAFT">
+                                DRAFT
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="videoSubmit"
+                        class="btn primary"
+                    >
+                        ADD VIDEO
+                    </button>
+
+
+                </form>
+
+
+                <div
+                    id="videoResult"
+                    style="display:none;"
+                ></div>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 VIDEO LIST
+                 ================================================= -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-header">
+
+                    <div>
+
+                        <h2>
+                            EXISTING VIDEOS
+                        </h2>
+
+                        <p>
+                            Manage videos already in the database.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="refreshVideos"
+                        class="btn"
+                    >
+                        REFRESH
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="videosTable"
+                >
+
+                    LOADING VIDEOS...
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script
+        type="module"
+        src="js/admin-video.js"
+    ></script>
+
+
+</body>
+
+</html>
+

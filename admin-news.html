@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin News | ROSE & CREWS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ADMIN NEWS PAGE
+         ===================================================== -->
+
+    <main class="admin-page">
+
+        <!-- LOADING -->
+        <section id="adminNewsLoading" class="dashboard-card">
+            VERIFYING ADMIN ACCESS...
+        </section>
+
+
+        <!-- CONTENT -->
+        <section id="adminNewsContent" style="display:none;">
+
+            <!-- HEADER -->
+            <div class="dashboard-card">
+
+                <h1>NEWS MANAGEMENT</h1>
+
+                <p>
+                    Create, edit and manage ROSE & CREWS news.
+                </p>
+
+                <button
+                    type="button"
+                    id="logoutBtn"
+                    class="btn">
+                    LOGOUT
+                </button>
+
+            </div>
+
+
+            <!-- ADD NEWS -->
+            <div class="dashboard-card">
+
+                <h2>ADD NEWS</h2>
+
+                <form id="newsForm">
+
+                    <input
+                        type="text"
+                        id="newsTitle"
+                        name="Title"
+                        placeholder="News Title"
+                        required>
+
+
+                    <input
+                        type="text"
+                        id="newsDate"
+                        name="Date"
+                        placeholder="Date"
+                        required>
+
+
+                    <input
+                        type="text"
+                        id="newsImage"
+                        name="ImageURL"
+                        placeholder="Image URL">
+
+
+                    <textarea
+                        id="newsDescription"
+                        name="Description"
+                        placeholder="News Description"
+                        rows="6"
+                        required></textarea>
+
+
+                    <button
+                        type="submit"
+                        id="saveNewsBtn"
+                        class="btn primary">
+
+                        ADD NEWS
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="dashboard-card">
+
+                <h2>NEWS LIST</h2>
+
+                <input
+                    type="search"
+                    id="newsSearch"
+                    placeholder="Search news...">
+
+            </div>
+
+
+            <!-- NEWS TABLE -->
+            <div id="newsTable"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script
+        type="module"
+        src="js/admin-news.js">
+    </script>
+
+</body>
+
+</html>
